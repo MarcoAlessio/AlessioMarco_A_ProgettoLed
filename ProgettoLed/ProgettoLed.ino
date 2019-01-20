@@ -17,7 +17,7 @@ void setup() {
   pinMode(R2, OUTPUT);
 }
 
-void Lampeggio1() {
+void lampeggio1() {
   for(int i=0; i<4; i++){
   digitalWrite (V1, LOW);
   delay (500);
@@ -26,7 +26,7 @@ void Lampeggio1() {
   }
 }
 
-void Lampeggio2() {
+void lampeggio2() {
   for(int i=0; i<4; i++){
   digitalWrite (V2, LOW);
   delay (500);
@@ -40,17 +40,23 @@ void loop() {
   digitalWrite (R1, HIGH);
   digitalWrite (V2, HIGH);
   delay (5000);
-  digitalWrite (G1, HIGH);
-  Lampeggio2();
+  lampeggio2();
   digitalWrite (V2, LOW);
+  digitalWrite (G1, HIGH);
+  digitalWrite (G2, HIGH);
+  delay (4000);
   digitalWrite (G1, LOW);
+  digitalWrite (G2, LOW);
   digitalWrite (R1, LOW);
   digitalWrite (R2, HIGH);
   digitalWrite (V1, HIGH);
   delay (5000);
-  digitalWrite (G2, HIGH);
-  Lampeggio1();
-  digitalWrite (G2, LOW);
+  lampeggio1();
   digitalWrite (V1, LOW);
+  digitalWrite (G2, HIGH);
+  digitalWrite (G1, HIGH);
+  delay (4000);
+  digitalWrite (G2, LOW);
+  digitalWrite (G1, LOW);
   digitalWrite (R2, LOW);  
 }
